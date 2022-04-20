@@ -22,16 +22,18 @@ public class PlayerMovementFPS_Nathan : MonoBehaviour
 
     void PlayerMove()
     {
-        //This makes the player move
+        // Get if the player is on the ground.
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer)
         {
+            // Reset the available jumps.
             remainingJumps = maxJumps;
         }
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
+        // Horizontal Movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
@@ -41,7 +43,8 @@ public class PlayerMovementFPS_Nathan : MonoBehaviour
         // Debug.Log(remainingJumps > 0);
         if (Input.GetButtonDown("Jump") && remainingJumps > 0)
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            // Set velocity instead of add to make player shoot up in mid-air.
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             remainingJumps -= 1;
         }
         playerVelocity.y += gravityValue * Time.deltaTime;
