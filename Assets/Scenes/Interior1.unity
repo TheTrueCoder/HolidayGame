@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38304
+  m_Name: pb_Mesh30560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-51874
+  m_Name: pb_Mesh30576
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1206,7 +1206,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38290
+  m_Name: pb_Mesh30546
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1650,9 +1650,9 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
@@ -1660,7 +1660,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 2
 --- !u!4 &531972179
 Transform:
   m_ObjectHideFlags: 0
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_AreaLightShadowCone: 120
   m_UseScreenSpaceShadows: 0
   m_InteractsWithSky: 1
-  m_AngularDiameter: 0.5
+  m_AngularDiameter: 2
   m_FlareSize: 2
   m_FlareTint: {r: 1, g: 1, b: 1, a: 1}
   m_FlareFalloff: 4
@@ -3278,7 +3278,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38348
+  m_Name: pb_Mesh30634
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4125,7 +4125,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2020966498}
+  m_Mesh: {fileID: 1810406008}
 --- !u!33 &1407892314
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -4133,7 +4133,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407892312}
-  m_Mesh: {fileID: 2020966498}
+  m_Mesh: {fileID: 1810406008}
 --- !u!23 &1407892315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4360,8 +4360,8 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 2020966498}
-  m_VersionIndex: 2101
+  m_Mesh: {fileID: 1810406008}
+  m_VersionIndex: 2104
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4442,9 +4442,10 @@ GameObject:
   - component: {fileID: 1584050349}
   - component: {fileID: 1584050348}
   - component: {fileID: 1584050347}
+  - component: {fileID: 1584050351}
   m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4528,6 +4529,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1584050351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584050346}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1767874206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4541,11 +4558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.34
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.014
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4553,19 +4570,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8416549
+      value: 0.9914449
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.54001576
+      value: 0.13052616
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4573,7 +4590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 65.369
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6103013491931613580, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4585,75 +4602,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1628eea8dc2649e4b81554980b973509, type: 3}
---- !u!850595691 &1963623392
-LightingSettings:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 4
-  m_GIWorkflowMode: 1
-  m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 0
-  m_RealtimeEnvironmentLighting: 1
-  m_BounceScale: 1
-  m_AlbedoBoost: 1
-  m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
-  m_BakeBackend: 1
-  m_LightmapMaxSize: 1024
-  m_BakeResolution: 40
-  m_Padding: 2
-  m_LightmapCompression: 3
-  m_AO: 0
-  m_AOMaxDistance: 1
-  m_CompAOExponent: 1
-  m_CompAOExponentDirect: 0
-  m_ExtractAO: 0
-  m_MixedBakeMode: 2
-  m_LightmapsBakeMode: 1
-  m_FilterMode: 1
-  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
-  m_ExportTrainingData: 0
-  m_TrainingDataDestination: TrainingData
-  m_RealtimeResolution: 2
-  m_ForceWhiteAlbedo: 0
-  m_ForceUpdates: 0
-  m_FinalGather: 0
-  m_FinalGatherRayCount: 256
-  m_FinalGatherFiltering: 1
-  m_PVRCulling: 1
-  m_PVRSampling: 1
-  m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 512
-  m_PVREnvironmentSampleCount: 256
-  m_PVREnvironmentReferencePointCount: 2048
-  m_LightProbeSampleCountMultiplier: 4
-  m_PVRBounces: 2
-  m_PVRMinBounces: 1
-  m_PVREnvironmentMIS: 1
-  m_PVRFilteringMode: 1
-  m_PVRDenoiserTypeDirect: 1
-  m_PVRDenoiserTypeIndirect: 1
-  m_PVRDenoiserTypeAO: 1
-  m_PVRFilterTypeDirect: 0
-  m_PVRFilterTypeIndirect: 0
-  m_PVRFilterTypeAO: 0
-  m_PVRFilteringGaussRadiusDirect: 1
-  m_PVRFilteringGaussRadiusIndirect: 5
-  m_PVRFilteringGaussRadiusAO: 2
-  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-  m_PVRFilteringAtrousPositionSigmaIndirect: 2
-  m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_PVRTiledBaking: 0
---- !u!43 &2020966498
+--- !u!43 &1810406008
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38328
+  m_Name: pb_Mesh30598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4662,7 +4617,7 @@ Mesh:
     topology: 0
     baseVertex: 0
     firstVertex: 0
-    vertexCount: 16
+    vertexCount: 9
     localAABB:
       m_Center: {x: -11.877361, y: 0.0001, z: -12.9454}
       m_Extent: {x: 15, y: 0, z: 15}
@@ -4682,10 +4637,10 @@ Mesh:
   m_KeepVertices: 1
   m_KeepIndices: 1
   m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00
+  m_IndexBuffer: 000001000200010003000200010004000300040005000300020003000600030007000600030005000700050008000700
   m_VertexData:
     serializedVersion: 3
-    m_VertexCount: 16
+    m_VertexCount: 9
     m_Channels:
     - stream: 0
       offset: 0
@@ -4743,8 +4698,8 @@ Mesh:
       offset: 0
       format: 0
       dimension: 0
-    m_DataSize: 768
-    _typelessdata: d604d7c117b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bfd604d7c12e90dfc1d604d7c117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfd604d7c15c204fc1ad093ec117b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bfad093ec12e90dfc1ad093ec117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfad093ec15c204fc1d604d7c117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfd604d7c15c204fc1d604d7c117b7d138907e0340000000000000803f000000000000803f0000000000000000000080bfd604d7c1907e0340ad093ec117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfad093ec15c204fc1ad093ec117b7d138907e0340000000000000803f000000000000803f0000000000000000000080bfad093ec1907e0340ad093ec117b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bfad093ec12e90dfc1ad093ec117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfad093ec15c204fc14cd9474017b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bf4cd947402e90dfc14cd9474017b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bf4cd947405c204fc1ad093ec117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfad093ec15c204fc1ad093ec117b7d138907e0340000000000000803f000000000000803f0000000000000000000080bfad093ec1907e03404cd9474017b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bf4cd947405c204fc14cd9474017b7d138907e0340000000000000803f000000000000803f0000000000000000000080bf4cd94740907e0340
+    m_DataSize: 432
+    _typelessdata: d604d7c117b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bfd604d7c12e90dfc1d604d7c117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfd604d7c15c204fc1ad093ec117b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bfad093ec12e90dfc1ad093ec117b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bfad093ec15c204fc1d604d7c117b7d138907e0340000000000000803f000000000000803f0000000000000000000080bfd604d7c1907e0340ad093ec117b7d138907e0340000000000000803f000000000000803f0000000000000000000080bfad093ec1907e03404cd9474017b7d1382e90dfc1000000000000803f000000000000803f0000000000000000000080bf4cd947402e90dfc14cd9474017b7d1385c204fc1000000000000803f000000000000803f0000000000000000000080bf4cd947405c204fc14cd9474017b7d138907e0340000000000000803f000000000000803f0000000000000000000080bf4cd94740907e0340
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -4811,6 +4766,68 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!850595691 &1963623392
+LightingSettings:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 4
+  m_GIWorkflowMode: 1
+  m_EnableBakedLightmaps: 1
+  m_EnableRealtimeLightmaps: 0
+  m_RealtimeEnvironmentLighting: 1
+  m_BounceScale: 1
+  m_AlbedoBoost: 1
+  m_IndirectOutputScale: 1
+  m_UsingShadowmask: 1
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 1024
+  m_BakeResolution: 40
+  m_Padding: 2
+  m_LightmapCompression: 3
+  m_AO: 0
+  m_AOMaxDistance: 1
+  m_CompAOExponent: 1
+  m_CompAOExponentDirect: 0
+  m_ExtractAO: 0
+  m_MixedBakeMode: 2
+  m_LightmapsBakeMode: 1
+  m_FilterMode: 1
+  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
+  m_ExportTrainingData: 0
+  m_TrainingDataDestination: TrainingData
+  m_RealtimeResolution: 2
+  m_ForceWhiteAlbedo: 0
+  m_ForceUpdates: 0
+  m_FinalGather: 0
+  m_FinalGatherRayCount: 256
+  m_FinalGatherFiltering: 1
+  m_PVRCulling: 1
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 32
+  m_PVRSampleCount: 512
+  m_PVREnvironmentSampleCount: 256
+  m_PVREnvironmentReferencePointCount: 2048
+  m_LightProbeSampleCountMultiplier: 4
+  m_PVRBounces: 2
+  m_PVRMinBounces: 1
+  m_PVREnvironmentMIS: 1
+  m_PVRFilteringMode: 1
+  m_PVRDenoiserTypeDirect: 1
+  m_PVRDenoiserTypeIndirect: 1
+  m_PVRDenoiserTypeAO: 1
+  m_PVRFilterTypeDirect: 0
+  m_PVRFilterTypeIndirect: 0
+  m_PVRFilterTypeAO: 0
+  m_PVRFilteringGaussRadiusDirect: 1
+  m_PVRFilteringGaussRadiusIndirect: 5
+  m_PVRFilteringGaussRadiusAO: 2
+  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+  m_PVRFilteringAtrousPositionSigmaIndirect: 2
+  m_PVRFilteringAtrousPositionSigmaAO: 1
+  m_PVRTiledBaking: 0
 --- !u!1 &2048227121
 GameObject:
   m_ObjectHideFlags: 0
