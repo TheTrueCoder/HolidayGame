@@ -5,17 +5,13 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float InflictedDamage = 1;
-    public float ExplosionStrength = 1;
-    public float ExplosionRadius = 100;
 
     void OnCollisionEnter(Collision other)
     {
         Collider OtherCollider = other.collider;
         if (OtherCollider.CompareTag("Enemy"))
         {
-            Rigidbody EnemyRB = OtherCollider.gameObject.GetComponent<Rigidbody>();
-            EnemyRB.isKinematic = false;
-            EnemyRB.AddExplosionForce(ExplosionStrength, transform.position, ExplosionRadius);
+            OtherCollider.GetComponent<Enemy>().TakeDamage(1, gameObject);
             Destroy(gameObject);
         }
     }
