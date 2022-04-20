@@ -11,7 +11,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject Bullet = Instantiate(Projectile, BulletLocation);
+            GameObject Bullet = Instantiate(Projectile, BulletLocation, false);
             Bullet.gameObject.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(FireSpeed, 0, 0));
         }
     }

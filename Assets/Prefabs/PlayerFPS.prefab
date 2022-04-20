@@ -447,11 +447,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6103013491931613580}
   - component: {fileID: 6103013491931613581}
-  - component: {fileID: 6103013491931613583}
+  - component: {fileID: 2378531525667152304}
   - component: {fileID: 6647463395567470418}
   m_Layer: 0
   m_Name: PlayerFPS
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6103013491931613583
+--- !u!114 &2378531525667152304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b118abfc6f1be24995de56375c9e715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 8
+  playerSpeed: 10
   gravityValue: -9.81
   jumpHeight: 1
   maxJumps: 2
