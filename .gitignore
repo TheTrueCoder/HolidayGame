@@ -7,4 +7,4 @@ UserSettings
 *.sln
 .vs/
 obj/
-/SourceArt/RoomMesh/*.blend1
+*.blend1
