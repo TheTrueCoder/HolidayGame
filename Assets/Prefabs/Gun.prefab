@@ -388,6 +388,7 @@ MonoBehaviour:
   playSound: 1
   fpsCam: {fileID: 0}
   muzzleFlash: {fileID: 7851192977321431835}
+  hitEffect: {fileID: 100002, guid: ac1aa04288fad804ba1cd769f4377aaf, type: 3}
 --- !u!1 &3832703582600972130
 GameObject:
   m_ObjectHideFlags: 0

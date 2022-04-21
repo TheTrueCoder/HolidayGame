@@ -11,6 +11,7 @@ public class HitscanGun : MonoBehaviour
 
     public Camera fpsCam;
     public VisualEffect muzzleFlash;
+    //public GameObject hitEffect;
     
     // Update is called once per frame
     void Update()
@@ -32,6 +33,12 @@ public class HitscanGun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            // Hit Effect
+            //Transform fxLoc = hit.transform;
+            //fxLoc.localScale = new Vector3(1, 1, 1);
+            //Debug.Log(hit.transform.localScale);
+            //Instantiate(hitEffect, fxLoc);
+
             Enemy enemy = hit.transform.GetComponent<Enemy>();
             if (enemy != null)
             {
