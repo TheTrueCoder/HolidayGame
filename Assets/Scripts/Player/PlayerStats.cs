@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public Text counter;
-    public int CollectibleCounter = 0;
+    public int collectibleCounter = 0;
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Collectible")) {
-            CollectibleCounter += 1;
-            counter.text = CollectibleCounter.ToString();
+        if (other.CompareTag("Collectable")) {
+            collectibleCounter += 1;
+            counter.text = collectibleCounter.ToString();
             Destroy(other.gameObject);
         }
     }

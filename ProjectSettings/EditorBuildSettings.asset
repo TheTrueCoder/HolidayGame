@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/YoobeeL1.unity
+    guid: d4f281634e9e7894e8c0a6011545fa7b
   m_configObjects: {}
