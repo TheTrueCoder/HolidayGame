@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
         Collider OtherCollider = other.collider;
         if (OtherCollider.CompareTag("Enemy"))
         {
-            OtherCollider.GetComponent<Enemy>().TakeDamage(1, gameObject);
+            OtherCollider.GetComponent<Enemy>().TakeDamage(1, gameObject.transform);
         }
         Destroy(gameObject);
     }

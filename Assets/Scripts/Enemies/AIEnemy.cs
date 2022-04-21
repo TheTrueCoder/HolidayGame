@@ -22,13 +22,14 @@ public class AIEnemy : Enemy
         agent.SetDestination(player.transform.position);
     }
 
-    public override void TakeDamage(int damage, GameObject projectile)
+    public override void TakeDamage(int damage, Transform hitLocation)
     {
         health -= damage;
         if (health <= 0) {
             Rigidbody SelfRB = gameObject.GetComponent<Rigidbody>();
             SelfRB.isKinematic = false;
-            SelfRB.AddExplosionForce(ExplosionStrength, projectile.transform.position, ExplosionRadius);
+            SelfRB.AddExplosionForce(ExplosionStrength, hitLocation.position, ExplosionRadius);
+            Destroy(gameObject);
         }
     }
 }

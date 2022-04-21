@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public virtual void TakeDamage(int damage, GameObject projectile) {}
+    public virtual void TakeDamage(int damage, Transform hitLocation) { }
 }
