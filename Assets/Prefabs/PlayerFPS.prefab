@@ -926,6 +926,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 5424158176697727886, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 6103013492333448126}
+    - target: {fileID: 5689858543491165506, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 6103013492333448126}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
 --- !u!1 &8690942083286043996 stripped

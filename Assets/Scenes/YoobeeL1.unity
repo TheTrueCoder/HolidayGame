@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 122.74805, g: 95.093445, b: 104.33093, a: 1}
+  m_IndirectSpecularColor: {r: 111.789, g: 80.733215, b: 73.439575, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -744,6 +744,24 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 13ff39f2ce5767f4abb97ab7d3076bc3, type: 2}
+--- !u!1 &767859091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4169171048525060007, guid: b28931501fcea5745bfb0c8d45184e1f, type: 3}
+  m_PrefabInstance: {fileID: 1413721619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &767859095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767859091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06949998, y: 0.0025999993, z: 0.022899995}
+  m_Center: {x: -0.000000014901161, y: 0, z: 0.011049998}
 --- !u!1 &851548532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1579,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -1686468594204124281, guid: b28931501fcea5745bfb0c8d45184e1f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7d6aca7fe5550e4a813469da73e2abf, type: 2}
     - target: {fileID: -1488447366782913082, guid: b28931501fcea5745bfb0c8d45184e1f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1651,12 +1673,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4114307563347435401, guid: 7b3b01319c389da46849c7ac24a4bc10, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114307563347435401, guid: 7b3b01319c389da46849c7ac24a4bc10, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5079463607594758728, guid: 7b3b01319c389da46849c7ac24a4bc10, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6843556865782517915, guid: 7b3b01319c389da46849c7ac24a4bc10, type: 3}
       propertyPath: m_RootOrder
