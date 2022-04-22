@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CoinSpin : MonoBehaviour
 {
-    public float SpinSpeed = 12;
+    public Vector3 speed = new Vector3(0, 0, 12);
     public float BounceSpeed = 1;
-    public float BounceScale = 1;
+    public float BounceScale = 0.3f;
     private Vector3 InitialLocation;
 
     void Start()
@@ -18,7 +18,7 @@ public class CoinSpin : MonoBehaviour
     void Update()
     {
         // Slowly turn the coin depending on how much time passed.
-        transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * SpinSpeed);
+        transform.Rotate(speed * Time.deltaTime);
         // Move the coin up and down in a sine wave.
         float NewPos = Mathf.Sin(Time.fixedTime * BounceSpeed) * BounceScale;
         transform.position = new Vector3(0, NewPos, 0) + InitialLocation;
