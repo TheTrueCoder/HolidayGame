@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 111.78778, g: 80.73291, b: 73.437744, a: 1}
+  m_IndirectSpecularColor: {r: 122.75, g: 95.096375, b: 104.33655, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.25
+    agentHeight: 1.5
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -2833,25 +2833,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1919, y: 0.15509994, z: 0}
   m_Center: {x: -0.05404999, y: -0.07754997, z: 0}
---- !u!1 &1937737574 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -6605080477111468651, guid: b28931501fcea5745bfb0c8d45184e1f, type: 3}
-  m_PrefabInstance: {fileID: 1413721619}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1937737578
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937737574}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6274059880062070182, guid: b28931501fcea5745bfb0c8d45184e1f, type: 3}
 --- !u!1 &1941954362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1823294580088718608, guid: b28931501fcea5745bfb0c8d45184e1f, type: 3}
