@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < numberOfEnemies; i++)
         {
             Instantiate(enemyPrefab, transform);
+            gameObject.GetComponent<Animator>().Play("EnemySpawn");
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
     }
