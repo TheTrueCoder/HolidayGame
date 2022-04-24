@@ -6,12 +6,34 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public Text counter;
-    public int collectibleCounter = 0;
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Collectable")) {
-            collectibleCounter += 1;
-            counter.text = collectibleCounter.ToString();
+    public GameObject victoryMessage;  // gameObject that is enabled when the user wins.
+    public int requiredCollectables = 1;
+    private int collectableCounter = 0;
+    private void OnTriggerEnter(Collider other)
+    {
+        void Start()
+        {
+            UpdateCounter();
+        }
+
+        void UpdateCounter()
+        {
+            counter.text = collectableCounter + "/" + requiredCollectables;
+        }
+
+        // Count collectable pickups.
+        if (other.CompareTag("Collectable"))
+        {
+            collectableCounter += 1;
+            UpdateCounter();
             Destroy(other.gameObject);
+        }
+
+        // When the player finishes the game.
+        if (other.CompareTag("Finish") && collectableCounter >= requiredCollectables)
+        {
+            victoryMessage.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
