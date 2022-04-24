@@ -9,11 +9,11 @@ public class AIEnemy : Enemy
     public int health = 10;
     public float explosionStrength = 100;
     public float explosionRadius = 100;
+    public float attackWaitSeconds = 2;
     public float deathWaitSeconds = 4;
     public Slider healthBar;
     private GameObject player;
     private NavMeshAgent agent;
-    private bool alive = true;
 
     void Start()
     {
@@ -27,10 +27,19 @@ public class AIEnemy : Enemy
     }
     void Update()
     {
-        if (alive)
-        {
-            agent.SetDestination(player.transform.position);
-        }
+        agent.SetDestination(player.transform.position);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        agent.enabled = false;
+        WaitAfterDamageInfliction(attackWaitSeconds);
+    }
+
+    private IEnumerator WaitAfterDamageInfliction(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        agent.enabled = true;
     }
 
     public override void TakeDamage(int damage, Transform hitLocation)
@@ -40,7 +49,6 @@ public class AIEnemy : Enemy
         // If the enemy is out of health, kill it.
         if (health <= 0)
         {
-            alive = false;
             agent.enabled = false;
             Rigidbody SelfRB = gameObject.GetComponent<Rigidbody>();
             SelfRB.isKinematic = false;
@@ -49,7 +57,7 @@ public class AIEnemy : Enemy
         }
     }
 
-    IEnumerator WaitDestroy(float seconds, GameObject objectToDestroy)
+    private IEnumerator WaitDestroy(float seconds, GameObject objectToDestroy)
     {
         yield return new WaitForSeconds(seconds);
         Destroy(objectToDestroy);

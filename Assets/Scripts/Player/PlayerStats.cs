@@ -9,18 +9,19 @@ public class PlayerStats : MonoBehaviour
     public GameObject victoryMessage;  // gameObject that is enabled when the user wins.
     public int requiredCollectables = 1;
     private int collectableCounter = 0;
+
+    void Start()
+    {
+        UpdateCounter();
+    }
+
+    void UpdateCounter()
+    {
+        counter.text = collectableCounter + "/" + requiredCollectables;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        void Start()
-        {
-            UpdateCounter();
-        }
-
-        void UpdateCounter()
-        {
-            counter.text = collectableCounter + "/" + requiredCollectables;
-        }
-
         // Count collectable pickups.
         if (other.CompareTag("Collectable"))
         {
