@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class AIEnemy : Enemy
 {
-    public int health = 10;
+    public int health = 4;
+    public int damagePerHit = 1;
     public float explosionStrength = 100;
     public float explosionRadius = 100;
     public float attackWaitSeconds = 2;
@@ -14,6 +15,7 @@ public class AIEnemy : Enemy
     public Slider healthBar;
     private GameObject player;
     private NavMeshAgent agent;
+    private bool alive = true;
 
     void Start()
     {
@@ -27,19 +29,30 @@ public class AIEnemy : Enemy
     }
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        if (agent.enabled)
+        {
+            agent.SetDestination(player.transform.position);
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        agent.enabled = false;
-        WaitAfterDamageInfliction(attackWaitSeconds);
+        if (other.CompareTag("Player") && alive)
+        {
+            agent.enabled = false;
+            other.GetComponent<PlayerStats>().TakeDamage(damagePerHit);
+            StartCoroutine(WaitAfterDamageInfliction(attackWaitSeconds));
+        }
     }
 
     private IEnumerator WaitAfterDamageInfliction(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        agent.enabled = true;
+        // If the enemy has died after running into player, don't re-enable the agent.
+        if (alive)
+        {
+            agent.enabled = true;
+        }
     }
 
     public override void TakeDamage(int damage, Transform hitLocation)
@@ -49,6 +62,7 @@ public class AIEnemy : Enemy
         // If the enemy is out of health, kill it.
         if (health <= 0)
         {
+            alive = false;
             agent.enabled = false;
             Rigidbody SelfRB = gameObject.GetComponent<Rigidbody>();
             SelfRB.isKinematic = false;

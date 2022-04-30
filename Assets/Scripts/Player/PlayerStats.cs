@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public Text counter;
+    public Text pickupCounterText;
+    public Text healthCounterText;
     public GameObject victoryMessage;  // gameObject that is enabled when the user wins.
+    public GameObject deathMessage;
+    public int health = 1;
     public int requiredCollectables = 1;
     private int collectableCounter = 0;
 
@@ -17,7 +20,19 @@ public class PlayerStats : MonoBehaviour
 
     void UpdateCounter()
     {
-        counter.text = collectableCounter + "/" + requiredCollectables;
+        pickupCounterText.text = collectableCounter + "/" + requiredCollectables;
+        healthCounterText.text = health.ToString();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        UpdateCounter();
+        if (health <= 0)
+        {
+            deathMessage.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
