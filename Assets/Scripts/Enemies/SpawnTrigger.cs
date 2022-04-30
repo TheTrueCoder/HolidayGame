@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnTrigger : MonoBehaviour
 {
-    public EnemySpawner enemySpawner;
+    public EnemySpawner[] enemySpawners;
     public bool spawnOnce = true;
     private bool spawned = false;
 
@@ -14,7 +14,10 @@ public class SpawnTrigger : MonoBehaviour
         {
             if (!(spawnOnce && spawned))
             {
-                StartCoroutine(enemySpawner.SpawnEnemies());
+                foreach (EnemySpawner enemySpawner in enemySpawners)
+                {
+                    StartCoroutine(enemySpawner.SpawnEnemies());
+                }
                 spawned = true;
             }
         }
