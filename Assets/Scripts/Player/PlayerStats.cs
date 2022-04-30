@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject deathMessage;
     public int health = 1;
     public int requiredCollectables = 1;
+    [HideInInspector]
     public int collectableCounter = 0;
 
     void Start()
