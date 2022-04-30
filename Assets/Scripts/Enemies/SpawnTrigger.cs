@@ -8,9 +8,14 @@ public class SpawnTrigger : MonoBehaviour
     public bool spawnOnce = true;
     private bool spawned = false;
 
+    public virtual bool SpawnCondition(Collider other)
+    {
+        return true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && SpawnCondition(other))
         {
             if (!(spawnOnce && spawned))
             {
