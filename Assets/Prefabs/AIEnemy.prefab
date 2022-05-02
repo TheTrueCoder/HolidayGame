@@ -342,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   damagePerHit: 1
-  explosionStrength: 1000
+  explosionStrength: 100
   explosionRadius: 100
   attackWaitSeconds: 2
   deathWaitSeconds: 4
